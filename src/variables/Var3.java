@@ -25,5 +25,8 @@ public class Var3 {
         int $kdetSize = 33;
         System.out.println($kdetSize);
 
+        float $floating = 57;
+        System.out.println($floating);
+
     }
 }
