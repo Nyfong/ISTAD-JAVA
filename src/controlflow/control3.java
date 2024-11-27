@@ -30,7 +30,7 @@ public class control3 {
                     float hour, salary, result;
                     String day;
                     DAY enumDay;
-
+                    System.out.println("======= WAGES CALCULATOR START =========");
                     System.out.println("Enter the number of hour : ");
                     hour = input.nextFloat();
                     System.out.println("Enter the number of salary : ");
@@ -53,7 +53,7 @@ public class control3 {
                 }break;
                 //momey exchange
                 case 2:{
-
+                    System.out.println("======= MONEY EXCHANGE START =========");
                     System.out.println("1. KHR to USD");
                     System.out.println("2. USD to KHR");
                     float amountOfMoney, exchangeMoney ;
