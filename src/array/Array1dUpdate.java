@@ -5,11 +5,7 @@ public class Array1dUpdate {
     public static void main(String[] args) {
         System.out.println("updating an array with existing elements");
         int arr [] = {1,2,3,4,5};
-        int[][] array = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        };
+
 //        System.out.println("arr forLoop elements");
 //        for(int el =0 ; el<arr.length; el+=1){
 //            arr[el] = arr[el]+2;
@@ -41,13 +37,7 @@ public class Array1dUpdate {
             }
         }
         */
-        System.out.println("\nTechnique 3: Stream API Transformation");
-        array = Arrays.stream(array)
-                .map(row -> Arrays.stream(row)
-                        .map(num -> num * 2) // Simply multiply each element by 2
-                        .toArray())
-                .toArray(int[][]::new);
-        System.out.println(Arrays.deepToString(array));
+
     }
 }
 
