@@ -4,10 +4,17 @@ import java.util.Arrays;
 public class Array1 {
     public static void main(String[] args) {
         //Declaring array literal
-
-        int[] arr = {1,2,3,10,4,5,12}; //five elements
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the size of the array :");
+        int n = sc.nextInt();
+        int[] arr = new int [n];
+        System.out.println();
+        for(int userEnter = 0 ; userEnter < n ; userEnter+=1) {
+            System.out.print("Enter "+ (userEnter)+": ");
+            arr[userEnter] = sc.nextInt();
+        }
         System.out.println(Arrays.toString(arr));
-        //finding Max
+         //finding Max
         int temp =0;
         for(int i =0 ; i< arr.length; i+=1)
             for(int j =0 ; j< arr.length; j+=1)
@@ -23,6 +30,7 @@ public class Array1 {
         int avg ;
         avg = sum/arr.length;
         System.out.println("Average: "+avg);
+
 
 
     }
