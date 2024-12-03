@@ -14,6 +14,7 @@ public class Arr2DItaration {
                 list.add(element);
             }
         }
+
         System.out.println(list);
         // Use an iterator to traverse the list
 //        Iterator<Integer> iterator = list.iterator();
