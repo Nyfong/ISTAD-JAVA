@@ -13,14 +13,11 @@ public class Array1 {
             for(int j =0 ; j< arr.length; j+=1)
                 if(arr[j] > arr[i])   temp = arr[j];
 
-
         System.out.println(temp +" : Max value");
         int sum =0;
         //finding sum
-        for(var el : arr)
-        {
-            sum += el;
-        }
+        for(var el : arr) sum += el;
+
         System.out.println("Sum:" + sum);
         //finding Avg
         int avg ;
