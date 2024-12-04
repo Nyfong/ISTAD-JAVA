@@ -46,8 +46,9 @@ public class Arr2Dcondo {
                     for( var floors : condo) {
                         int i=0;
                         j+=1;
-                        for( var rooms : floors)
-                            System.out.println((rooms == null)? "floor: "+(j)+", room:"+(i+=1)+". not yet have owner": "floor: "+(j)+", room:"+(i+=1) +". " + rooms +" 's room ");
+                        for( var rooms : floors) System.out.println((rooms == null)?
+                                    "floor: "+(j)+", room:"+(i+=1)+". not yet have owner":
+                                    "floor: "+(j)+", room:"+(i+=1) +". " + rooms +" 's room ");
                     }
 
                 }
