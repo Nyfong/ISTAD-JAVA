@@ -43,11 +43,12 @@ public class Arr2Dcondo {
                 case 2 ->{
                     System.out.println("Display all the condo information");
                     for( var floors : condo)
-                        for( var rooms : floors) System.out.println(rooms);
+                        for( var rooms : floors) System.out.println((rooms == null)? "not yet have owner": rooms +" 's room ");
                 }
                 case 3 -> {
-                    option =-1;
                     System.out.println("Exit the program");
+                    System.out.println("BYE BYE! ");
+                    option =-1;
                 }
                 default -> System.out.println("Invalid option");
             }
