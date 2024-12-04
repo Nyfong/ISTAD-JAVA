@@ -41,9 +41,11 @@ public class Arr2Dcondo {
                     condo[floorsNumber -1][roomsNumber -1 ] = userName;
                 }
                 case 2 ->{
+                    int i=0;
                     System.out.println("Display all the condo information");
                     for( var floors : condo)
-                        for( var rooms : floors) System.out.println((rooms == null)? "not yet have owner": rooms +" 's room ");
+                        for( var rooms : floors)
+                            System.out.println((rooms == null)? (i+=1) +". not yet have owner": (i+=1)+". " + rooms +" 's room ");
                 }
                 case 3 -> {
                     System.out.println("Exit the program");
