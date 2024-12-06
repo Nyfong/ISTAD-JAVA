@@ -33,6 +33,10 @@ public class Array1 {
 
 
 
+
+
+
+        sc.close();
     }
 
 
