@@ -4,7 +4,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class CenimaBooking {
-
     public static void main(String[] args) {
         int rowSeat = 4, columnSeat = 4;
         int userOption;
@@ -14,11 +13,10 @@ public class CenimaBooking {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
         String formattedTime = time.format(formatter);
 
-
         String GREEN = "\u001B[32m", RED = "\u001B[31m", RESET = "\u001B[0m", BLUE = "\u001B[35m";
-        System.out.print(GREEN+"Please enter the hall row :" + RESET);
+        System.out.print(GREEN + "Please enter the hall row :" + RESET);
         rowSeat = sc.nextInt();
-        System.out.print(GREEN+"Please Enter the hall seat OR column :"+ RESET);
+        System.out.print(GREEN + "Please Enter the hall seat OR column :" + RESET);
         columnSeat = sc.nextInt();
 
         char[] rowName = {
@@ -27,8 +25,6 @@ public class CenimaBooking {
                 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
         };
         String[][] cenimaHall = new String[rowSeat][columnSeat];
-
-        //System.out.println(Arrays.deepToString(cenimaHall));
 
         do {
 
@@ -60,7 +56,6 @@ public class CenimaBooking {
                     switch (bookingOption) {
                         //input by the code
                         case 1 -> {
-
                             String userInputCode;
                             System.out.println(BLUE + "[CHOOSING] " + RESET + GREEN + "BOOKING BY CODE " + RESET);
                             System.out.print(GREEN + "[INSERT CODE] " + RESET + ": ");
@@ -85,7 +80,6 @@ public class CenimaBooking {
                                         break;
                                     }
                                 }
-
                                 // Validate if the number part is a valid integer
                                 if (number.matches("\\d+")) {
                                     num = Integer.parseInt(number); // Convert number to integer
@@ -129,7 +123,6 @@ public class CenimaBooking {
                                 // If the input format is not valid
                                 System.out.println(RED + "Invalid input format. Please use the format 'A-1'." + RESET);
                             }
-
                         }
                         case 2 -> {
 
@@ -144,25 +137,18 @@ public class CenimaBooking {
                                 for (int j = 0; j < cenimaHall[x].length; j++)
                                     if (cenimaHall[row - 1][col - 1] == cenimaHall[x][j]) searchFound = true;
 
-                                if(cenimaHall[row-1][col-1] != null)   {
-                                      System.out.println(RED + "Invalid input format. Please use the format 'A-1'." + RESET)  ;
-                                      break;
-                                  }
-                                  else
-                                  {
-                                      System.out.println("Search found" + row + ", " + col + " Table name:" + rowName[row - 1] + "-" + col);
+                            if (cenimaHall[row - 1][col - 1] != null) {
+                                System.out.println(RED + "Invalid input format. Please use the format 'A-1'." + RESET);
+                                break;
+                            } else {
+                                System.out.println("Search found" + row + ", " + col + " Table name:" + rowName[row - 1] + "-" + col);
 
-                                      System.out.print(GREEN + "[INSERT ]  " + RESET + "  your name to book the table : ");
+                                System.out.print(GREEN + "[INSERT ]  " + RESET + "  your name to book the table : ");
 
-                                      userName = sc.nextLine();
-                                      String addToBooking = userName + ", at : " + formattedTime;
-                                      cenimaHall[row - 1][col - 1] = addToBooking;
-
-
-                                  }
-
-
-
+                                userName = sc.nextLine();
+                                String addToBooking = userName + ", at : " + formattedTime;
+                                cenimaHall[row - 1][col - 1] = addToBooking;
+                            }
                         }
                         default -> System.out.println("Invalid option");
                     }
@@ -266,8 +252,7 @@ public class CenimaBooking {
 
                             System.out.print(GREEN + "[INSERT ]  " + RESET + "  Are you sure to CANCEL book the table ? (y/n) : ");
                             userName = sc.nextLine();
-                            if (userName.equalsIgnoreCase("y") )
-                            {
+                            if (userName.equalsIgnoreCase("y")) {
                                 bookingOption = 3;
                             }
 
@@ -284,28 +269,27 @@ public class CenimaBooking {
                     System.out.println("\t\t\t\t\t" + BLUE + "--------------     SCREEN      -------------" + RESET);
                     System.out.println("\t\t\t\t\t" + BLUE + "--------------                 -------------" + RESET);
                     System.out.println("\t\t\t\t\t" + BLUE + "--------------------------------------------" + RESET);
-                    int rowAlpha = 0 ,  bookSeatTotal=0;
+                    int rowAlpha = 0, bookSeatTotal = 0;
                     for (var row : cenimaHall) {
                         int aviable = 0;
                         aviable += 1;
-                        int numSeat = 0 ;
+                        int numSeat = 0;
                         numSeat += 1;
                         System.out.println(" ");
                         System.out.print("[\t");
-                        for (var seat : row)
-                        {
+                        for (var seat : row) {
                             System.out.print((seat != null) ?
                                     (aviable != 0 ?
                                             (rowName[rowAlpha] + "-" + (numSeat++) + " " + RED + " BO :: " + RESET + BLUE + "(" + (seat) + ". ) " + RESET + ",\t")
                                             :
                                             ("0-" + aviable + " " + RED + " BO ," + RESET + "(" + seat + "),\t"))
                                     : (rowName[rowAlpha] + "-" + (numSeat++) + " " + GREEN + " Av ," + RESET + "(" + " have a seat ) \t"));
-                            if(seat != null) bookSeatTotal +=1;
+                            if (seat != null) bookSeatTotal += 1;
                         }
                         System.out.println(" ]");
                         rowAlpha += 1;
                     }
-                    System.out.println("\n************ The total book seat is = "+ bookSeatTotal);
+                    System.out.println("\n************ The total book seat is = " + bookSeatTotal);
                     //new line
                     System.out.println("\n");
                 }
