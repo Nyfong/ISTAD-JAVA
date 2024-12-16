@@ -2,7 +2,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
 public class CenimaBooking {
     public static void main(String[] args) {
         int rowSeat = 4, columnSeat = 4;
@@ -27,7 +26,6 @@ public class CenimaBooking {
         String[][] cenimaHall = new String[rowSeat][columnSeat];
 
         do {
-
             System.out.println(BLUE + "---------------------------------------------------------" + RESET);
             System.out.println(BLUE + "---------           BOOKING            -----------" + RESET);
             System.out.println(BLUE + "---------       SEAT   &  CINEMA       -----------" + RESET);
@@ -42,7 +40,6 @@ public class CenimaBooking {
             userOption = sc.nextInt();
 
             switch (userOption) {
-
                 case 1 -> {
                     int bookingOption;
                     System.out.println(BLUE + "----------********** WELCOME TO BOOKING SYSTEM **********----------" + RESET);
@@ -104,7 +101,6 @@ public class CenimaBooking {
                                             break;
                                         }
                                     }
-
                                     // Check if the seat is available (null means unbooked)
                                     if (rowIndex != -1 && cenimaHall[rowIndex][num - 1] == null) {
                                         System.out.print(GREEN + "[INSERT] " + RESET + "Your name to book the table: ");
@@ -205,7 +201,6 @@ public class CenimaBooking {
                                         }
                                     }
                                 }
-
                                 // Proceed if both the row letter and seat number are valid
                                 if (isAlpha && isNumber) {
                                     // Find the row index for the selected row letter
@@ -231,7 +226,6 @@ public class CenimaBooking {
                             } else {
                                 System.out.println(RED + "Invalid input format. Please use the format 'A-1'." + RESET);
                             }
-
                         }
                         //CANCEL by col row
                         case 2 -> {
@@ -299,8 +293,6 @@ public class CenimaBooking {
                 }
                 default -> System.out.println("Invalid option");
             }
-
         } while (userOption < 4 && userOption > 0);
     }
 }
-
