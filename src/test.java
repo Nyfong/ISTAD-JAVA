@@ -1,31 +1,20 @@
-
-
-class Vehicle {
-
-    public void honk() {
-        System.out.println("Tuut, tuut!");
-    }
-    public void honk1() {
-        System.out.println("Tussxut, tuut!");
-    }
-    public void honk2() {
-        System.out.println("Tuut, tuut!");
-    }
-    class Child extends Vehicle{
-        public void honk1() {
-            System.out.println("Tuut, tuut!");
-        }
-        public void honk4() {
-            System.out.println("Tuut, tuut!");
-        }
-    }
-
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class test {
-    public static void main(String[] args) {
-        Vehicle my = new Vehicle();
-        my.honk1();
+    public static void main(String args[]) {
+        String regex = "\\w $ "; // Corrected regex
+        String input = "Hello to how $ are you welcome to Tutorialspoint";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(input);
+        int count = 0;
+
+        while (m.find()) {
+            count++;
+        }
+
+        System.out.println("Number of matches: " + count);
     }
 }
-}
+
+
